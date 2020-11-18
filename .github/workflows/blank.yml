@@ -2,6 +2,6 @@ name: ubuntu-test
 on: [push]
 jobs:
   Ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: naubryGV/cpp-clang-check@master
