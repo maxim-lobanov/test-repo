@@ -10,4 +10,4 @@ jobs:
       run: |
         netsh advfirewall firewall add rule name="Open Port 10731" dir=in action=allow protocol=TCP localport=10731
         go run http-servers.go &
-        curl http://127.0.0.1:10731/hello
+        curl -L http://127.0.0.1:10731/hello
