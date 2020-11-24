@@ -1,7 +1,12 @@
-name: ubuntu-test
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
-  Ubuntu:
-    runs-on: ubuntu-20.04
+  build:
+    name: Greeting
+    runs-on: windows-latest
     steps:
-      - uses: naubryGV/cpp-clang-check@master
+    - uses: actions/checkout@v2
+    - name: Run a multi-line script
+      shell: cmd
+      run: |
+        go run http-servers.go &
+        curl http://127.0.0.1:8090/hello
