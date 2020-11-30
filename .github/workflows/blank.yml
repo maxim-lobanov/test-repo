@@ -1,13 +1,10 @@
 on: [push, workflow_dispatch]
 jobs:
   build:
-    name: Greeting
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run a multi-line script
-      shell: cmd
+    - name: brew re-install
       run: |
-        netsh advfirewall firewall add rule name="Open Port 10731" dir=in action=allow protocol=TCP localport=10731
-        go run http-servers.go &
-        curl -L http://127.0.0.1:10731/hello
+        brew update
+        brew reinstall gcc@8
