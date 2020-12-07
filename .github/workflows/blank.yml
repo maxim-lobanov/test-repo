@@ -6,5 +6,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: brew re-install
       run: |
-        brew update
-        brew reinstall gcc@8
+        echo "::warning::Please consider switching to ruby/setup-ruby"
