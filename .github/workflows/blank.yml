@@ -1,9 +1,9 @@
 on: [push, workflow_dispatch]
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: brew re-install
-      run: |
-        echo "::warning::Please consider switching to ruby/setup-ruby"
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
