@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - run: $ANDROID_HOME/tools/bin/sdkmanager --list --channel=1
