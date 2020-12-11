@@ -5,5 +5,5 @@ jobs:
     steps:
     - run: |
         docker image ls
-        docker pull windows:1809
+        docker pull mcr.microsoft.com/windows:1809
         docker image ls
