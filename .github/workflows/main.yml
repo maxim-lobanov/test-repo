@@ -11,3 +11,4 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: $ANDROID_HOME/tools/bin/sdkmanager --list --channel=3
+      - run: $ANDROID_HOME/tools/bin/sdkmanager cmake;3.18.1 --channel=3
