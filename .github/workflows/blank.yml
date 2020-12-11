@@ -1,9 +1,6 @@
 on: [push, workflow_dispatch]
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-    - run: |
-        docker image ls
-        docker pull mcr.microsoft.com/windows:1809
-        docker image ls
+    - run: ls -la
