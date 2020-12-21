@@ -8,5 +8,5 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - run: brew update
+      #- run: brew update
       - run: brew upgrade
