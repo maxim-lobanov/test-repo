@@ -21,6 +21,7 @@ jobs:
          which python
        shell: bash {0}
      - run: |
+         export PATH="$pythonLocation:$PATH"
          echo $PATH
          python --version
          which python
