@@ -15,7 +15,11 @@ jobs:
          echo $PATH
          python --version
          which python
-       shell: bash -l {0}
+     - run: |
+         echo $PATH
+         python --version
+         which python
+       shell: bash {0}
      - run: |
          echo $PATH
          python --version
