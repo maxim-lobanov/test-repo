@@ -1,12 +1,32 @@
-name: CI
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: macos-latest
-    steps:
-      #- run: brew update
-      - run: brew upgrade
+name: 'test'                                                                                                                                                                                               
+                                                                                                                                                                                                            
+ on:                                                                                                                                                                                                        
+   push:                                                                                                                                                                                                    
+     branches:                                                                                                                                                                                              
+       - "main"                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                            
+ jobs:                                                                                                                                                                                                      
+   build:                                                                                                                                                                                                   
+     runs-on: ${{ matrix.os }}                                                                                                                                                                              
+     strategy:                                                                                                                                                                                              
+       matrix:                                                                                                                                                                                              
+         os: [ubuntu-latest, windows-latest, macos-latest]                                                                                                                                                  
+         python-version: ["3.7"]                                                                                                                                                                            
+     steps:                                                                                                                                                                                                 
+       - uses: actions/checkout@v2                                                                                                                                                                          
+       - name: Set up Python                                                                                                                                                                                
+         uses: actions/setup-python@v2                                                                                                                                                                      
+         with:                                                                                                                                                                                              
+           python-version: ${{ matrix.python-version }}
+       - shell: bash {0}                                                                                                                                                                                 
+         name: 'Display Python version and location'                                                                                                                                                        
+         run: |
+             echo $PATH                                                                                                                                                                                             
+             python --version                                                                                                                                                                               
+             which python                                                                                                                                                   
+       - shell: bash -l {0}                                                                                                                                                                                 
+         name: 'Display Python version and location'                                                                                                                                                        
+         run: |        
+             echo $PATH                                                                                                                                                                                     
+             python --version                                                                                                                                                                               
+             which python
