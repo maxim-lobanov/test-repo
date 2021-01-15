@@ -7,6 +7,8 @@ jobs:
   build:
    runs-on: macos-latest
    steps:
+     - run: | 
+         printenv | sort
      - run: |
-         sudo ${ANDROID_HOME}/tools/bin/sdkmanager --list
-         #sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147"
+         #sudo ${ANDROID_HOME}/tools/bin/sdkmanager --list
+         sudo $ANDROID_HOME/tools/bin/sdkmanager --install "ndk;21.3.6528147"
