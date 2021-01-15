@@ -7,22 +7,6 @@ jobs:
   build:
    runs-on: macos-latest
    steps:
-     - uses: actions/checkout@v2
-     - uses: actions/setup-python@v2
-       with:
-         python-version: 3.7
      - run: |
-         echo $PATH
-         python --version
-         which python
-     - run: |
-         echo $PATH
-         python --version
-         which python
-       shell: bash {0}
-     - run: |
-         export PATH="$pythonLocation:$PATH"
-         echo $PATH
-         python --version
-         which python
-       shell: bash -l {0}
+         sudo ${ANDROID_HOME}/tools/bin/sdkmanager --list
+         #sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147"
