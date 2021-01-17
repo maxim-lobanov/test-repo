@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-   runs-on: macos-latest
-   steps:
-     - run: | 
-         printenv | sort
-     - run: |
-          #sudo ${ANDROID_HOME}/tools/bin/sdkmanager --list
-          $ANDROID_HOME/tools/bin/sdkmanager --install "ndk;21.3.6528147"
+  get-msedgedriver-version:
+    runs-on: 'macos-10.15'
+    steps:
+      - name: Download driver
+        run: |
+          wget https://msedgedriver.azureedge.net/87.0.630.0/edgedriver_mac64.zip
+          unzip -a edgedriver_mac64.zip
+          msedgedriver --version
