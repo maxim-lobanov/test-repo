@@ -11,4 +11,4 @@ jobs:
         run: |
           wget https://msedgedriver.azureedge.net/87.0.630.0/edgedriver_mac64.zip
           unzip -a edgedriver_mac64.zip
-          msedgedriver --version
+          ./msedgedriver --version
