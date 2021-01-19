@@ -11,6 +11,6 @@ jobs:
           & $env:ANDROID_HOME\tools\bin\sdkmanager.bat --install "ndk;21.3.6528147"
           echo "ANDROID_NDK_HOME=$env:ANDROID_HOME\ndk\21.3.6528147" >> $env:GITHUB_ENV
      - run: |
-         echo $env:ANDROID_NDK_HOME
-         ls -la $env:ANDROID_NDK_HOME
+         Write-Host $env:ANDROID_NDK_HOME
+         Get-ChildItem $env:ANDROID_NDK_HOME
           
