@@ -5,7 +5,7 @@ on:
 
 jobs:
   kustomize:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'macos-latest'
     steps:
      - run: |
           ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147"
