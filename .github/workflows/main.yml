@@ -5,12 +5,12 @@ on:
 
 jobs:
   kustomize:
-    runs-on: 'macos-latest'
+    runs-on: 'windows-latest'
     steps:
      - run: |
-          ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147"
-          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/21.3.6528147" >> $GITHUB_ENV
+          $env:ANDROID_HOME/tools/bin/sdkmanager --install "ndk;21.3.6528147"
+          echo "ANDROID_NDK_HOME=$env:ANDROID_HOME/ndk/21.3.6528147" >> $env:GITHUB_ENV
      - run: |
-         echo $ANDROID_NDK_HOME
-         ls -la $ANDROID_NDK_HOME
+         echo $env:ANDROID_NDK_HOME
+         ls -la $env:ANDROID_NDK_HOME
           
