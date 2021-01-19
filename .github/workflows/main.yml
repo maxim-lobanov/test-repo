@@ -8,7 +8,7 @@ jobs:
     runs-on: 'windows-latest'
     steps:
      - run: |
-          $env:ANDROID_HOME\tools\bin\sdkmanager --install "ndk;21.3.6528147"
+          & $env:ANDROID_HOME\tools\bin\sdkmanager.exe --install "ndk;21.3.6528147"
           echo "ANDROID_NDK_HOME=$env:ANDROID_HOME\ndk\21.3.6528147" >> $env:GITHUB_ENV
      - run: |
          echo $env:ANDROID_NDK_HOME
