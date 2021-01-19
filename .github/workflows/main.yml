@@ -7,6 +7,10 @@ jobs:
   kustomize:
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: imranismail/setup-kustomize@v1
-        with:
-          kustomize-version: "3.6.1"
+     - run: |
+          ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147"
+          echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/21.3.6528147" >> $GITHUB_ENV
+     - run: |
+         echo $ANDROID_NDK_HOME
+         ls -la $ANDROID_NDK_HOME
+          
