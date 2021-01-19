@@ -4,11 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  get-msedgedriver-version:
-    runs-on: 'macos-10.15'
+  kustomize:
+    runs-on: 'ubuntu-latest'
     steps:
-      - name: Download driver
-        run: |
-          wget https://msedgedriver.azureedge.net/87.0.630.0/edgedriver_mac64.zip
-          unzip -a edgedriver_mac64.zip
-          ./msedgedriver --version
+      - uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize-version: "3.6.1"
