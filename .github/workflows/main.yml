@@ -5,12 +5,8 @@ on:
 
 jobs:
   kustomize:
-    runs-on: 'windows-latest'
+    runs-on: 'ubuntu-latest'
     steps:
      - run: |
-          & $env:ANDROID_HOME\tools\bin\sdkmanager.bat --install "ndk;21.3.6528147"
-          echo "ANDROID_NDK_HOME=$env:ANDROID_HOME\ndk\21.3.6528147" >> $env:GITHUB_ENV
-     - run: |
-         Write-Host $env:ANDROID_NDK_HOME
-         Get-ChildItem $env:ANDROID_NDK_HOME
-          
+          Get-PSDrive
+       shell: pwsh
