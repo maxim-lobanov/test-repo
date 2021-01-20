@@ -5,7 +5,7 @@ on:
 
 jobs:
   kustomize:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'macos-11.0'
     steps:
      - run: |
           Get-PSDrive
