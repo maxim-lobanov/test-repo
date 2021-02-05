@@ -13,6 +13,7 @@ jobs:
           tar -czvf $HOME/Downloads/nvm.tar.gz -C $HOME/.nvm .
       - name: Unpack
         run: |
+          mkdir $HOME/Downloads/nvm2
           tar -xvzf $HOME/Downloads/nvm.tar.gz -C $HOME/Downloads/nvm2
       - name: Collect hash
         run: |
