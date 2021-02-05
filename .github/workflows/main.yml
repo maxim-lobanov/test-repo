@@ -15,11 +15,18 @@ jobs:
         run: |
           mkdir $HOME/Downloads/nvm2
           tar -xvzf $HOME/Downloads/nvm.tar.gz -C $HOME/Downloads/nvm2
+          mkdir $HOME/temp
       - name: Collect hash
         run: |
-          mkdir $HOME/temp
-          find $HOME/.nvm -type f -exec md5sum {} + | sort -k 2 > $HOME/temp/nvm1.txt
-          find $HOME/Downloads/nvm2 -type f -exec md5sum {} + | sort -k 2 > $HOME/temp/nvm2.txt
+          Get-ChildItem -Path $env:HOME/.nvm -Recurse | ForEach-Object {
+            $hash = Get-FileHash $_.FullName | Select-Object -ExpandProperty Hash
+            return "$($_.FullName) -> $hash"
+          } | Out-File -Path $env:HOME/temp/nvm1.txt
+          Get-ChildItem -Path $env:HOME/Downloads/nvm2 -Recurse | ForEach-Object {
+            $hash = Get-FileHash $_.FullName | Select-Object -ExpandProperty Hash
+            return "$($_.FullName) -> $hash"
+          } | Out-File -Path $env:HOME/temp/nvm2.txt
+        shell: pwsh
       - uses: actions/upload-artifact@v2
         with:
           name: Test
