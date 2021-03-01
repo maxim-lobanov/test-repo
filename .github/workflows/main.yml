@@ -5,24 +5,15 @@ on:
 
 jobs:
   job1:
-    runs-on: 'macos-latest'
+    runs-on: 'ubuntu-latest'
     steps:
-      - uses: actions/checkout@v2
-      - name: Archive
-        run: |
-          tar -czvf $HOME/Downloads/nvm.tar.gz -C $HOME/.nvm .
-      - name: Unpack
-        run: |
-          mkdir $HOME/Downloads/nvm2
-          tar -xvzf $HOME/Downloads/nvm.tar.gz -C $HOME/Downloads/nvm2
-      - name: Collect hash
-        run: |
-          mkdir $HOME/temp
-          find $HOME/.nvm -type f -exec md5sum {} \; | sort -k 2 > $HOME/temp/nvm1.txt
-          find $HOME/Downloads/nvm2 -type f -exec md5sum {} \; | sort -k 2 > $HOME/temp/nvm2.txt
-        shell: pwsh
-      - uses: actions/upload-artifact@v2
+      - run: |
+          printenv | sort
+          download_url="https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz"
+          #wget -O /java_package.tar.gz $download_url
+      - uses: actions/setup-java@v1
         with:
-          name: Test
-          path: $HOME/temp
+          jdkFile: ${{ runner.temp }}/java_package.tar.gz # Optional - jdkFile to install java from.
+          java-version: '11.0.0'
+          architecture: x64
       
