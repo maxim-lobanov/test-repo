@@ -7,12 +7,11 @@ jobs:
   job1:
     runs-on: 'ubuntu-latest'
     steps:
-      - run: |
-          download_url="https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.10%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz"
-          wget -O $RUNNER_TEMP/java_package.tar.gz $download_url
-      - uses: actions/setup-java@v1
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.3
         with:
-          jdkFile: ${{ runner.temp }}/java_package.tar.gz # Optional - jdkFile to install java from.
+          java-version: '11.0.0-ea'
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.3
+        with:
           java-version: '11.0.0'
-          architecture: x64
-      
