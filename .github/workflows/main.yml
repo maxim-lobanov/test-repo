@@ -17,9 +17,9 @@ jobs:
       - run: ghc --version
       - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
         with:
-          ghc-version: '7'
+          ghc-version: '8.6.1'
       - run: ghc --version
       - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
         with:
-          ghc-version: '7'
+          ghc-version: '8.6.1'
       - run: ghc --version
