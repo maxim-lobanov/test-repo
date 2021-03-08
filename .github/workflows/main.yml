@@ -10,8 +10,16 @@ jobs:
       - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
         with:
           ghc-version: '9.0.1'
-      - run: |
-          Get-ChildItem "C:\ProgramData\chocolatey\lib"
-          Get-ChildItem "C:\ProgramData\chocolatey\lib\ghc.9.0.1"
-        shell: pwsh
+      - run: ghc --version
+      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
+        with:
+          ghc-version: '9.0.1'
+      - run: ghc --version
+      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
+        with:
+          ghc-version: '7'
+      - run: ghc --version
+      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
+        with:
+          ghc-version: '7'
       - run: ghc --version
