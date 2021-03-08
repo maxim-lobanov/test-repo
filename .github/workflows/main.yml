@@ -7,19 +7,5 @@ jobs:
   job1:
     runs-on: 'windows-latest'
     steps:
-      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
-        with:
-          ghc-version: '9.0.1'
-      - run: ghc --version
-      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
-        with:
-          ghc-version: '9.0.1'
-      - run: ghc --version
-      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
-        with:
-          ghc-version: '8.6.1'
-      - run: ghc --version
-      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
-        with:
-          ghc-version: '8.6.1'
-      - run: ghc --version
+    - uses: seanmiddleditch/gha-setup-vsdevenv@master
+    - run: nmake --version
