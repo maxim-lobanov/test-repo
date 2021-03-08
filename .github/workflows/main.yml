@@ -7,11 +7,11 @@ jobs:
   job1:
     runs-on: 'windows-latest'
     steps:
+      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
+        with:
+          ghc-version: '9.0.1'
       - run: |
           Get-ChildItem "C:\ProgramData\chocolatey\lib"
           Get-ChildItem "C:\ProgramData\chocolatey\lib\ghc.9.0.1"
         shell: pwsh
-      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
-        with:
-          ghc-version: '9.0.1'
       - run: ghc --version
