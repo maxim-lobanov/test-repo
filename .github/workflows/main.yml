@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: haskell/actions/setup@v1
         with:
-          ghc-version: '9.0'
+          ghc-version: '9.0.1'
       - run: ghc --version
