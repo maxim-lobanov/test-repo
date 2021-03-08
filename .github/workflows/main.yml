@@ -7,7 +7,7 @@ jobs:
   job1:
     runs-on: 'windows-latest'
     steps:
-      - uses: haskell/actions/setup@v1
+      - uses: maxim-lobanov/actions/setup@support-choco-ghc-new-path
         with:
-          ghc-version: 'latest'
+          ghc-version: '9.0.1'
       - run: ghc --version
