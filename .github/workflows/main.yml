@@ -7,6 +7,6 @@ jobs:
   job1:
     runs-on: 'windows-latest'
     steps:
-    - uses: microsoft/setup-msbuild@v1
-    #- uses: seanmiddleditch/gha-setup-vsdevenv@master
+    #- uses: microsoft/setup-msbuild@v1
+    - uses: seanmiddleditch/gha-setup-vsdevenv@master
     - run: nmake /?
