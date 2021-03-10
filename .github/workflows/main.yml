@@ -16,7 +16,7 @@ jobs:
       uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
         java-version: 15.0.0+14-ea
-        distribution: adoptium
+        distribution: zulu
     - name: Setup Java JDK
       uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
