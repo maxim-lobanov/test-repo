@@ -8,10 +8,17 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: Setup Java JDK
-      uses: actions/setup-java@v1.4.3
+      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
-        java-version: 15.0.0-ea.19
+        java-version: 11
+        distribution: adoptium
+    - run: |
+        mv /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10 /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9
+        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
+        echo "----"
+        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9
     - name: Setup Java JDK
-      uses: actions/setup-java@v1.4.3
+      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
-        java-version: 15.0.0-ea.19
+        java-version: 11
+        distribution: adoptium
