@@ -52,9 +52,12 @@ jobs:
       uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
         java-version: 8
+        distribution: adoptium
     - name: Setup Java JDK
       uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
         java-version: 12
         distribution: adoptium
+        
+
         distribution: adoptium
