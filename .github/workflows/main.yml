@@ -22,6 +22,11 @@ jobs:
       with:
         java-version: 8.0
         distribution: adoptium
+    - name: Setup Java JDK
+      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
+      with:
+        java-version: 12.0.2+10.1
+        distribution: adoptium
     - run: |
         mv /opt/hostedtoolcache/Java_Adoptium_jdk/8.0.282 /opt/hostedtoolcache/Java_Adoptium_jdk/8.0.282+8
         ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
@@ -36,8 +41,20 @@ jobs:
         ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9
         echo "----"
         ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9/x64
+    - run: |
+        mv /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2 /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2+10.1
+        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
+        echo "----"
+        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2+10.1
+        echo "----"
+        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2+10.1/x64
     - name: Setup Java JDK
       uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
         java-version: 8
+    - name: Setup Java JDK
+      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
+      with:
+        java-version: 12
+        distribution: adoptium
         distribution: adoptium
