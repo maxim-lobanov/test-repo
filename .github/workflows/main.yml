@@ -17,6 +17,8 @@ jobs:
         ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
         echo "----"
         ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9
+        echo "----"
+        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9/x64
     - name: Setup Java JDK
       uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
       with:
