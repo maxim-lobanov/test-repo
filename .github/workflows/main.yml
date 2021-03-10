@@ -58,6 +58,4 @@ jobs:
       with:
         java-version: 12
         distribution: adoptium
-        
-
-        distribution: adoptium
+      
