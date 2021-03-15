@@ -1,0 +1,15 @@
+name: 'test'
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - run: echo "${{ secrets.MY_VAR1 }}"
+  job2:
+    runs-on: 'ubuntu-latest'
+    environment: test-env
+    steps:
+    - run: echo "${{ secrets.MY_VAR1 }}"
