@@ -10,6 +10,6 @@ jobs:
     - name: Setup Java JDK
       uses: actions/setup-java@v1
       with:
-        java-version: 11.0.10
-    - run: ls -la  /Users/runner/hostedtoolcache/jdk/11.0.10/x64
+        java-version: 8
+    - run: ls -la  /Users/runner/hostedtoolcache/jdk/8.*/x64
       
