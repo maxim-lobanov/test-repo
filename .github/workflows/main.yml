@@ -5,62 +5,11 @@ on:
 
 jobs:
   job1:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'macos-latest'
     steps:
     - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
+      uses: actions/setup-java@v1
       with:
-        java-version: 11.0.10+9
-        distribution: adoptium
-    - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
-      with:
-        java-version: 15.0.0+14-ea
-        distribution: zulu
-    - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
-      with:
-        java-version: 9.0
-        distribution: adoptium
-    - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
-      with:
-        java-version: 8.0
-        distribution: adoptium
-    - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
-      with:
-        java-version: 12.0.2+10.1
-        distribution: adoptium
-    - run: |
-        mv /opt/hostedtoolcache/Java_Adoptium_jdk/8.0.282 /opt/hostedtoolcache/Java_Adoptium_jdk/8.0.282+8
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
-        echo "----"
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/8.0.282+8
-        echo "----"
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/8.0.282+8/x64
-    - run: |
-        mv /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10 /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
-        echo "----"
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9
-        echo "----"
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/11.0.10+9/x64
-    - run: |
-        mv /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2 /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2+10.1
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk
-        echo "----"
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2+10.1
-        echo "----"
-        ls -la /opt/hostedtoolcache/Java_Adoptium_jdk/12.0.2+10.1/x64
-    - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
-      with:
-        java-version: 8
-        distribution: adoptium
-    - name: Setup Java JDK
-      uses: maxim-lobanov/setup-java@v-malob/add-5-digits-support
-      with:
-        java-version: 12.0.2
-        distribution: adoptium
+        java-version: 11.0.10
+    
       
