@@ -6,10 +6,7 @@ on:
 jobs:
   job1:
     runs-on: 'ubuntu-latest'
+    container: hseeberger/scala-sbt:graalvm-ce-20.0.0-java8_1.3.13_2.13.3
     steps:
-    - run: echo "${{ secrets.MY_VAR1 }}"
-  job2:
-    runs-on: 'ubuntu-latest'
-    environment: test-env
-    steps:
-    - run: echo "${{ secrets.MY_VAR1 }}"
+    - run: echo "hello world"
+    - run: echo "hello world"
