@@ -12,4 +12,7 @@ jobs:
       with:
         java-version: 8
     - run: ls -la  /Users/runner/hostedtoolcache/jdk/8.*/x64
+    - run: |
+        cd /Users/runner/hostedtoolcache/jdk/8.*/x64
+        find . -type l -ls
       
