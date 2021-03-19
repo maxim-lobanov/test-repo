@@ -8,9 +8,9 @@ jobs:
     runs-on: 'macos-latest'
     steps:
     - name: Setup Java JDK
-      uses: actions/setup-java@v1
+      uses: maxim-lobanov/setup-java@add-main-warning
       with:
-        java-version: 8
+        java-version: 15
     - run: ls -la  /Users/runner/hostedtoolcache/jdk/8.*/x64
     - run: |
         cd /Users/runner/hostedtoolcache/jdk/8.*/x64
