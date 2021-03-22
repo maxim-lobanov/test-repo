@@ -8,6 +8,6 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: Setup Java JDK
-      uses: actions/setup-java@main
+      uses: actions/setup-java@v1
       with:
         java-version: 15
