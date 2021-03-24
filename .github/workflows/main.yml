@@ -7,7 +7,9 @@ jobs:
   job1:
     runs-on: 'ubuntu-latest'
     steps:
-    - name: Setup Java JDK
-      uses: actions/setup-java@main
+    - name: Run Azure PowerShell script
+      uses: azure/powershell@v1
       with:
-        java-version: 15
+        inlineScript: |
+          Get-AzVM -ResourceGroupName "ResourceGroup11"
+        azPSVersion: '5.7.0'
