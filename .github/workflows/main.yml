@@ -5,6 +5,20 @@ on:
 
 jobs:
   job1:
-    runs-on: 'macos-latest'
+    runs-on: 'ubuntu-latest'
     steps:
-    - run: ls -la /Library/Frameworks/Xamarin.iOS.framework/Versions
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+
+    - name: install
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y puppet
+        ruby -ruri -e 'puts URI.escape(\"/a p a\")'
+        echo "run puppet"
+        puppet --version"
