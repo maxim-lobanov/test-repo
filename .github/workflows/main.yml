@@ -13,12 +13,9 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 2.5
 
     - name: install
       run: |
-        sudo apt-get update
-        sudo apt-get install -y puppet
-        ruby -ruri -e 'puts URI.escape("/a p a")'
-        echo "run puppet"
-        puppet --version
+        ruby --version
+        gem --version
