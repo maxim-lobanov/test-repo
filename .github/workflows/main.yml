@@ -21,4 +21,4 @@ jobs:
         sudo apt-get install -y puppet
         ruby -ruri -e 'puts URI.escape("/a p a")'
         echo "run puppet"
-        puppet --version"
+        puppet --version
