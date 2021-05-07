@@ -1,21 +1,14 @@
-name: 'test'
-on:
-  push:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
-  job1:
-    runs-on: 'ubuntu-latest'
+  build:
+    name: Build
+    runs-on: macos-latest
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Step1 Setup keychain
+        continue-on-error: true
+        run: fastlane create_keychain name:name_of_keychain password:chosen_password
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.3
-
-    - name: install
-      run: |
-        ruby --version
-        gem --version
+      - name: Step2 Setup keychain with bundle
+        run: bundle exec fastlane create_keychain name:name_of_keychain password:chosen_password
