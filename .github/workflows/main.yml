@@ -6,9 +6,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Step1 Setup keychain
-        continue-on-error: true
-        run: fastlane create_keychain name:name_of_keychain password:chosen_password
-
-      - name: Step2 Setup keychain with bundle
-        run: bundle exec fastlane create_keychain name:name_of_keychain password:chosen_password
+      - run: |
+          $osVersion = [Environment]::OSVersion
+          $osVersionMajorMinor = $osVersion.Version.ToString(2)
+          $osVersion
+          $osVersionMajorMinor
+        shell: pwsh
