@@ -5,6 +5,6 @@ jobs:
   write-hello:
     runs-on: macos-latest
     steps:
-      - run: ps $$
-      - run: ps
+      - run: yes & ps $$
+      - run: yes & ps
      
