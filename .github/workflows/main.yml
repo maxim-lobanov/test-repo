@@ -5,7 +5,9 @@ jobs:
   write-hello:
     runs-on: macos-latest
     steps:
-      - run: /Applications/Visual Studio.app/Contents/MacOS/Visual Studio Update.app
+      - run: |
+          echo "hello" > 1.txt
+          open 1.txt
       - run: ps $$
       - run: ps
      
