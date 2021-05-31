@@ -5,6 +5,7 @@ jobs:
   write-hello:
     runs-on: macos-latest
     steps:
-      - run: yes & ps $$
-      - run: yes & ps
+      - run: /Applications/Visual Studio.app/Contents/MacOS/Visual Studio Update.app
+      - run: ps $$
+      - run: ps
      
