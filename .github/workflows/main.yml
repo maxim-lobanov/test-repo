@@ -3,7 +3,7 @@ on: [ push, pull_request ]
 jobs:
 
   write-hello:
-    runs-on: macos-latest
+    runs-on: macos-11.3
     steps:
       - run: |
           echo "hello" > 1.txt
