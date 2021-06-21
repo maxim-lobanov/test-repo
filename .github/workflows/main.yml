@@ -2,15 +2,15 @@ on: [ push, pull_request ]
 
 jobs:
 
-  write-hello:
-    runs-on: macos-11
+  test1:
+    runs-on: ubuntu-latest
     steps:
       - run: |
-         echo "::warning::Missing semicolon"
+         yes | head -n5
          
-  write-hello2:
-    runs-on: macos-11
+  test2:
+    runs-on: ubuntu-latest
     steps:
       - run: |
-         echo "::warning::Another warning"
+         bash -c "yes | head -n5"
      
