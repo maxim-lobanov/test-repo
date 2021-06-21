@@ -7,6 +7,10 @@ jobs:
     steps:
       - run: |
          echo "::warning::Missing semicolon"
-      - run: ps $$
-      - run: ps
+         
+  write-hello2:
+    runs-on: macos-11
+    steps:
+      - run: |
+         echo "::warning::Another warning"
      
