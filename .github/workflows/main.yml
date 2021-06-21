@@ -3,13 +3,13 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - run: |
          yes | head -n5
          
   test2:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - run: |
          bash -c "yes | head -n5"
