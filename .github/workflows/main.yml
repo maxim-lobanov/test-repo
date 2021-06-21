@@ -3,11 +3,10 @@ on: [ push, pull_request ]
 jobs:
 
   write-hello:
-    runs-on: macos-11.3
+    runs-on: macos-11
     steps:
       - run: |
-          echo "hello" > 1.txt
-          open 1.txt &
+         echo "::warning::Missing semicolon"
       - run: ps $$
       - run: ps
      
