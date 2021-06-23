@@ -5,12 +5,12 @@ jobs:
   test1:
     runs-on: macos-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - run: |
-         yes | head -n5
-         
-  test2:
-    runs-on: macos-latest
-    steps:
-      - run: |
-         bash -c "yes | head -n5"
-     
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          security create-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
+        env:
+          KEYCHAIN_PASSWORD: 123
