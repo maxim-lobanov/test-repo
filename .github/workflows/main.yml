@@ -9,6 +9,7 @@ jobs:
         uses: actions/checkout@v2
       - run: |
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          echo $KEYCHAIN_PATH
           security create-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
           security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
