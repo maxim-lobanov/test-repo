@@ -5,10 +5,6 @@ jobs:
   test1:
     runs-on: macos-latest
     steps:
-      - name: Download iOS Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: Build-${{ matrix.unityVersion }}-iOS
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
