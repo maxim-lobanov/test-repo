@@ -19,7 +19,6 @@ body:
   - type: checkboxes
     attributes:
       label: Virtual environments affected
-      multiple: false
       options:
         - label: Ubuntu 16.04
         - label: Ubuntu 18.04
