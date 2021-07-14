@@ -3,7 +3,7 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - run: sudo npm install -g pnpm@6.9.0
+      - run: npx pnpm add -g pnpm
       - run: pnpm --version
