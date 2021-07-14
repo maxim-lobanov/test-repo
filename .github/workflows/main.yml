@@ -5,5 +5,5 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo npm install -g pnpm
+      - run: sudo npm install -g pnpm@6.9.0
       - run: pnpm --version
