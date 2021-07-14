@@ -3,7 +3,7 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - run: npm install -g pnpm
       - run: pnpm --version
