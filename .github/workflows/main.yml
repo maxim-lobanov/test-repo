@@ -5,8 +5,7 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      - run: sudo chmod 777 /usr/local/lib/node_modules -R
+      - run: sudo chmod 777 /usr/local/bin
       - run: npm install -g pnpm
       - run: pnpm --version
