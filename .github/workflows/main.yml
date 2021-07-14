@@ -5,6 +5,6 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - run: chmod 777 /usr/local/lib/node_modules
+      - run: sudo chmod 777 /usr/local/lib/node_modules -R
       - run: npm install -g pnpm
       - run: pnpm --version
