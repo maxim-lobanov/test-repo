@@ -5,5 +5,5 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - run: npx pnpm add -g pnpm
+      - run: curl -f https://get.pnpm.io/v6.7.js | node - add --global pnpm
       - run: pnpm --version
