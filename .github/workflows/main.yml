@@ -3,18 +3,8 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 6.10.0
-      - name: Generate pnpm file
-        run: | 
-          New-Item -ItemType Directory -Path "C:\Temp2"
-          cd "C:\Temp2"
-          pnpm get store
-          
-          New-Item -ItemType Directory -Path "D:\Temp2"
-          cd "D:\Temp2"
-          pnpm get store
+      - run: exit 1
+      - run: printenv
+        if: always()
