@@ -3,11 +3,14 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 6.10.0
       - name: Generate pnpm file
-        run: pnpm store path
+        run: | 
+          cd C:\
+          Get-ChildItem 
+          pnpm store path
