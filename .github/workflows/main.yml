@@ -13,5 +13,8 @@ jobs:
         run: | 
           New-Item -ItemType Directory -Path "C:\Temp2"
           cd "C:\Temp2"
-          Get-ChildItem 
+          pnpm store path
+          
+          New-Item -ItemType Directory -Path "D:\Temp2"
+          cd "D:\Temp2"
           pnpm store path
