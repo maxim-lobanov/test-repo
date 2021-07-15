@@ -3,7 +3,7 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Install pnpm
         uses: pnpm/action-setup@v2
