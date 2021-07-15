@@ -3,9 +3,11 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: sudo chmod 777 /usr/local/lib/node_modules -R
-      - run: sudo chmod 777 /usr/local/bin
-      - run: npm install -g pnpm
-      - run: pnpm --version
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.10.0
+      - name: Generate pnpm file
+        run: pnpm store path
