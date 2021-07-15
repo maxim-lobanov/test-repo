@@ -11,6 +11,7 @@ jobs:
           version: 6.10.0
       - name: Generate pnpm file
         run: | 
-          cd C:\
+          New-Item -ItemType Directory -Path "C:\Temp2"
+          cd "C:\Temp2"
           Get-ChildItem 
           pnpm store path
