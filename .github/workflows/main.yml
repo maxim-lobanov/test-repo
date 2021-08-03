@@ -3,10 +3,10 @@ on: [ push, pull_request ]
 jobs:
 
   test1:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: joschi/setup-java@adoptium
         with:
-          java-version: '11'
+          java-version: '8'
           distribution: 'temurin'
       - run: java -version
