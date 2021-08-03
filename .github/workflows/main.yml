@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: joschi/setup-java@adoptium
         with:
-          java-version: '8'
+          java-version: '11'
           distribution: 'temurin'
       - run: java -version
