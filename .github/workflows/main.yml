@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/setup-java@v2
         with:
-          java-version: '16'
+          java-version: '13'
           distribution: 'adopt'
       - run: java -version
