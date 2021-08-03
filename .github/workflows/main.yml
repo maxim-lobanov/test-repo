@@ -5,8 +5,7 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - uses: joschi/setup-java@adoptium
+      - uses: actions/setup-java@v2
         with:
-          java-version: '8'
-          distribution: 'temurin'
+          java-version: '16'
       - run: java -version
