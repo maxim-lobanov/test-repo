@@ -9,4 +9,4 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      - run: java version
+      - run: java -version
