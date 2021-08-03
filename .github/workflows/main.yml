@@ -5,7 +5,8 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-go@v2
+      - uses: joschi/setup-java@adoptium
         with:
-          go-version: '1.16.6'
-      - run: go version
+          java-version: '8'
+          distribution: 'temurin'
+      - run: java --version
