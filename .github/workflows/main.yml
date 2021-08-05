@@ -7,11 +7,11 @@ jobs:
     steps:
       - uses: maxim-lobanov/setup-java@adoptium
         with:
-          java-version: '17' 
+          java-version: '17-ea' 
           distribution: 'temurin'
       - run: java -version
       - uses: maxim-lobanov/setup-java@adoptium
         with:
-          java-version: '17'
+          java-version: '17-ea'
           distribution: 'temurin' 
       - run: java -version  
