@@ -13,5 +13,5 @@ jobs:
       - uses: maxim-lobanov/setup-java@adoptium
         with:
           java-version: '17-ea'
-          distribution: 'adopt'
+          distribution: 'adopt' 
       - run: java -version  
