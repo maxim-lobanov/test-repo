@@ -5,8 +5,8 @@ jobs:
   test1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-java@v2
+      - uses: maxim-lobanov/setup-java@adoptium
         with:
-          java-version: '13'
-          distribution: 'adopt'
+          java-version: '17-ea'
+          distribution: 'temurin'
       - run: java -version
