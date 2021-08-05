@@ -9,4 +9,4 @@ jobs:
         with:
           java-version: '17-ea'
           distribution: 'adopt'
-      - run: java -version 
+      - run: java -version  
