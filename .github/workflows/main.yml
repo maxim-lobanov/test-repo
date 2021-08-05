@@ -8,5 +8,5 @@ jobs:
       - uses: maxim-lobanov/setup-java@adoptium
         with:
           java-version: '17-ea'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - run: java -version  
