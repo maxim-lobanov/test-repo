@@ -1,17 +1,24 @@
 on: [ push, pull_request ]
 
 jobs:
-
-  test1:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        java: [ '8', '11', '17-ea' ]
+        os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
+    name: Java ${{ matrix.Java }} (${{ matrix.os }}) sample
     steps:
-      - uses: maxim-lobanov/setup-java@adoptium
+      - uses: actions/checkout@v2
+      - name: Setup java
+        uses: joschi/setup-java@adoptium
         with:
-          java-version: '17-ea' 
           distribution: 'temurin'
+          java-version: ${{ matrix.java }}
       - run: java -version
-      - uses: maxim-lobanov/setup-java@adoptium
+      - name: Setup java
+        uses: joschi/setup-java@adoptium
         with:
-          java-version: '17-ea'
-          distribution: 'temurin' 
-      - run: java -version  
+          distribution: 'temurin'
+          java-version: ${{ matrix.java }}
+      - run: java -version
