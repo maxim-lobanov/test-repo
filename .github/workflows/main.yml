@@ -2,23 +2,13 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        java: [ '8', '11', '17-ea' ]
-        os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
-    name: Java ${{ matrix.Java }} (${{ matrix.os }}) sample
+    runs-on: ubuntu-latest
+    name: Go
     steps:
       - uses: actions/checkout@v2
-      - name: Setup java
-        uses: joschi/setup-java@adoptium
+      - name: Setup go
+        uses: actions/setup-go@master
         with:
-          distribution: 'temurin'
-          java-version: ${{ matrix.java }}
-      - run: java -version
-      - name: Setup java
-        uses: joschi/setup-java@adoptium
-        with:
-          distribution: 'temurin'
-          java-version: ${{ matrix.java }}
-      - run: java -version
+          go-version: 1.17-rc1
+          stable: false
+      - run: go -version
