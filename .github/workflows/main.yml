@@ -2,7 +2,7 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: macos-11
     name: Go
     steps:
       - uses: actions/checkout@v2
