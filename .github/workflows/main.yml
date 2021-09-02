@@ -2,7 +2,7 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    runs-on: macos-11
+    runs-on: ubuntu-latest-xl
     name: Go
     steps:
       - uses: actions/checkout@v2
