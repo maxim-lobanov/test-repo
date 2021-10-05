@@ -2,9 +2,8 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    runs-on: ubuntu-16.04
-    name: Go
+    runs-on: macos-11
     steps:
-      - uses: actions/checkout@v2
-      - name: Ruby info
-        run: ruby --version
+      - uses: maxim-lobanov/setup-xcode@master
+        with:
+          xcode-version: latest
