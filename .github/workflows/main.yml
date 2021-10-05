@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: maxim-lobanov/setup-xcode@master
         with:
-          xcode-version: latest
+          xcode-version: '13.0'
