@@ -6,4 +6,4 @@ jobs:
     steps:
     - uses: einar-notland/setup-xcode@stableSemver
       with:
-        xcode-version: 12.5
+        xcode-version: 12.5-beta
