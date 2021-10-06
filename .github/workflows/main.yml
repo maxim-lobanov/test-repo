@@ -6,4 +6,4 @@ jobs:
     steps:
     - uses: einar-notland/setup-xcode@stableSemver
       with:
-        xcode-version: 13.0-beta
+        xcode-version: 13-beta
