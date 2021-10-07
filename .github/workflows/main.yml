@@ -12,7 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - uses: actions/setup-xcode@improve-output
+    - uses: maxim-lobanov/setup-xcode@improve-output
       name: Setup Xcode
       id: setup-xcode
       with:
