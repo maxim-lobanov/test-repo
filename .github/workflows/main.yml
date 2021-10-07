@@ -6,13 +6,13 @@ jobs:
     runs-on: macos-11
     strategy:
       matrix:
-        xcode-version: ['12.5', '13', '13.0', '13.0.0', '13.0-beta', '13.0.0-beta', '12.5-beta', latest, latest-stable]
+        xcode-version: ['12.5-beta']
       fail-fast: false
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - uses: einar-notland/setup-xcode@stableSemver
+    - uses: actions/setup-xcode@improve-output
       name: Setup Xcode
       id: setup-xcode
       with:
