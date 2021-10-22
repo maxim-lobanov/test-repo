@@ -25,6 +25,6 @@ echo '\''export PATH="$HOME/.local/bin:$PATH"'\'' >> ~/.profile
 #    Then, take the last line, get the text of the option (everything after the period), and trim whitespace
 # 2. Install Rider
 sudo runuser -l runner -c '
-choice=$(printf '\''y\n'\'' | /workspace/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
-/workspace/.local/bin/projector autoinstall --config-name "RiderForActions" --ide-name "$choice" --port 10000
+choice=$(printf '\''y\n'\'' | /home/runner/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
+/home/runner/.local/bin/projector autoinstall --config-name "RiderForActions" --ide-name "$choice" --port 10000
 '
