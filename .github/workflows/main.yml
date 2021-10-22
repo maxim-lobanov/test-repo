@@ -5,31 +5,5 @@ jobs:
     name: Rider
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        set -euo pipefail
-        
-        # Setup miniconda as a version of Python >3.6 for Projector
-        curl -s -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-        chmod +x ./Miniconda3-latest-Linux-x86_64.sh
-        sudo ./Miniconda3-latest-Linux-x86_64.sh -b -p /var/opt/miniconda
-        rm ./Miniconda3-latest-Linux-x86_64.sh
-
-        # dump the version
-        /var/opt/miniconda/bin/python3 --version
-        /var/opt/miniconda/bin/pip3 --version
-
-        # Install projector and add the installation location to the path
-        /var/opt/miniconda/bin/pip3 install projector-installer --user
-        
-        $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2-
-
-        printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs
-        choice=$(printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
-        echo "DEBUG"
-        echo "$choice"
-        $HOME/.local/bin/projector autoinstall --config-name "RiderForActions" --ide-name "$choice" --port 10000
-    
-        #sudo runuser -l runner -c '
-        #choice=$(printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
-        #$HOME/.local/bin/projector autoinstall --config-name "RiderForActions" --ide-name "$choice" --port 10000
-        #'
+    - uses: actions/checkout@v2
+    - run: sh bootstrap-projector.sh
