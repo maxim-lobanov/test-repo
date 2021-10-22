@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: sh bootstrap-projector.sh
+    - run: bash bootstrap-projector.sh
