@@ -20,6 +20,7 @@ jobs:
         sudo runuser -l runner -c '
         /var/opt/miniconda/bin/pip3 install projector-installer --user
         echo '\''export PATH="$HOME/.local/bin:$PATH"'\'' >> ~/.profile
+        '
     
         sudo runuser -l runner -c '
         choice=$(printf '\''y\n'\'' | /workspace/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
