@@ -19,10 +19,9 @@ jobs:
         /var/opt/miniconda/bin/pip3 --version
 
         # Install projector and add the installation location to the path
-        sudo runuser -l runner -c '
         /var/opt/miniconda/bin/pip3 install projector-installer --user
-        echo '\''export PATH="$HOME/.local/bin:$PATH"'\'' >> ~/.profile
-        '
+        
+        $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2-
 
         printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs
         choice=$(printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
