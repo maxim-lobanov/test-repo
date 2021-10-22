@@ -23,6 +23,8 @@ jobs:
         /var/opt/miniconda/bin/pip3 install projector-installer --user
         echo '\''export PATH="$HOME/.local/bin:$PATH"'\'' >> ~/.profile
         '
+
+        printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs
         choice=$(printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
         echo "DEBUG"
         echo "$choice"
