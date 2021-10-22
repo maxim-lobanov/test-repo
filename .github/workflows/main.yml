@@ -1,23 +1,27 @@
 on: [ push, pull_request ]
 
 jobs:
-  versions-macOS-110:
-    name: macOS 11
-    runs-on: macos-10.15
-    strategy:
-      matrix:
-        xcode-version: ['12.5-beta']
-      fail-fast: false
+  rider:
+    name: Rider
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    - run: |
+        # Setup miniconda as a version of Python >3.6 for Projector
+        curl -s -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+        chmod +x ./Miniconda3-latest-Linux-x86_64.sh
+        sudo ./Miniconda3-latest-Linux-x86_64.sh -b -p /var/opt/miniconda
+        rm ./Miniconda3-latest-Linux-x86_64.sh
 
-    - uses: maxim-lobanov/setup-xcode@improve-output
-      name: Setup Xcode
-      id: setup-xcode
-      with:
-        xcode-version: ${{ matrix.xcode-version }}
-    - name: Print output variables
-      run: |
-        echo "Version: ${{ steps.setup-xcode.outputs.version }}"
-        echo "Path: ${{ steps.setup-xcode.outputs.path }}"
+        # dump the version
+        /var/opt/miniconda/bin/python3 --version
+        /var/opt/miniconda/bin/pip3 --version
+
+        # Install projector and add the installation location to the path
+        sudo runuser -l build -c '
+        /var/opt/miniconda/bin/pip3 install projector-installer --user
+        echo '\''export PATH="$HOME/.local/bin:$PATH"'\'' >> ~/.profile
+    
+        sudo runuser -l build -c '
+        choice=$(printf '\''y\n'\'' | /workspace/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
+        /workspace/.local/bin/projector autoinstall --config-name "RiderForActions" --ide-name "$choice" --port 10000
+        '
