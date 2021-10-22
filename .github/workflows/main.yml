@@ -23,6 +23,6 @@ jobs:
         '
     
         sudo runuser -l runner -c '
-        choice=$(printf '\''y\n'\'' | /workspace/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
+        choice=$(printf '\''y\n'\'' | $HOME/.local/bin/projector --accept-license find rider | tail -1 | cut -d . -f 2- | xargs)
         $HOME/.local/bin/projector autoinstall --config-name "RiderForActions" --ide-name "$choice" --port 10000
         '
