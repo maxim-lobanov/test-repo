@@ -3,8 +3,9 @@ on: [ push, pull_request ]
 jobs:
   rider:
     name: Rider
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - run: |
-        Get-ChildItem env:
+        whoami
+        id -u
