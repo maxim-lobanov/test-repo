@@ -7,4 +7,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        ls -la $AGENT_TOOLSDIRECTORY/Ruby
+        ls -la $AGENT_TOOLSDIRECTORY/Ruby/2.7.4/x64
+        
