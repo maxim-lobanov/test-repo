@@ -7,8 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        # rm -f /opt/az/include/python3.6m
-        ls -la /opt/az/include/python3.6m
+        rm -f /opt/az/include/python3.6m/abstract.h
         echo "-----"
         echo "0" > /opt/az/mystuff.txt
         echo "-----"
@@ -18,7 +17,7 @@ jobs:
         echo "-----"
         rm -rf /opt/google/chrome
     - run: |
-        rm -f "/usr/share/az_5.9.0.zip
+        rm -f "/usr/share/az_5.9.0.zip"
         echo "-----"
         echo "1" > /usr/share/az_4.4.0.zip
         echo "-----"
