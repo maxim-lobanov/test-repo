@@ -25,7 +25,7 @@ jobs:
         echo "-----"
         rm -rf /usr/share/apache-maven-3.8.3
         echo "-----"
-        ls -la /usr/share/cmake/bash-completion
+        echo "5" > /usr/share/cmake/bash-completion/bash-completion-config-version.cmake
     - run: |
-        ls -la /home/linuxbrew/.linuxbrew
+        rm -rf /home/linuxbrew/.linuxbrew/var
         
