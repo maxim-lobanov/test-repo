@@ -7,14 +7,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        ls -la /opt/az
+        ls -la /opt/az/include
+        # echo "0" > /opt/az/mystuff.txt
         echo "-----"
-        ls -la /opt/google
+        ls -la /opt/google/chrome
+        # rm -rf /opt/google/chrome
     - run: |
-        ls -la /usr/share
+        # rm -f "/usr/share/az_5.9.0.zip
+        ls -la /usr/share/apache-maven-3.8.3
         echo "--------"
-        ls -la /usr/share/cmake
+        echo "1" > /usr/share/cmake/bash-completion
     - run: |
-        ls -la /home/linuxbrew
-        ls -la /runneradmin
+        ls -la /home/linuxbrew/.linuxbrew
         
