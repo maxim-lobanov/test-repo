@@ -7,6 +7,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo ls -la /
-    - run: |
-        sudo ls -la /root
+        ls -la /home
