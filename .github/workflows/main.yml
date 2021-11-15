@@ -7,25 +7,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        rm -f /opt/az/include/python3.6m/abstract.h
-        echo "-----"
-        echo "0" > /opt/az/mystuff.txt
-        echo "-----"
-        echo "1" >> /opt/google/chrome/vk_swiftshader_icd.json
-        echo "-----"
-        echo "1" > /opt/google/chrome/vk_swiftshader_icd.json
-        echo "-----"
-        rm -rf /opt/google/chrome
-    - run: |
-        rm -f "/usr/share/az_5.9.0.zip"
-        echo "-----"
-        echo "1" > /usr/share/az_4.4.0.zip
-        echo "-----"
-        echo "0" > /usr/share/apache-maven-3.8.3/README.txt
-        echo "-----"
-        rm -rf /usr/share/apache-maven-3.8.3
-        echo "-----"
-        echo "5" > /usr/share/cmake/bash-completion/bash-completion-config-version.cmake
-    - run: |
-        rm -rf /home/linuxbrew/.linuxbrew/var
+        ls -la /etc/sudoers.d
         
