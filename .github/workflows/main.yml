@@ -7,9 +7,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        ls -la /opt
+        ls -la /opt/az
+        echo "-----"
+        ls -la /opt/google
     - run: |
         ls -la /usr/share
+        echo "--------"
+        ls -la /usr/share/cmake
     - run: |
-        ls -la /home
+        ls -la /home/linuxbrew
+        ls -la /runneradmin
         
