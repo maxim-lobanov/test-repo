@@ -7,6 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo groupadd docker
+        sudo groupadd -f docker 
         sudo usermod -aG docker runner
         
