@@ -14,7 +14,7 @@ jobs:
         $dockerCredLatestRelease = Invoke-RestMethod -Uri "https://api.github.com/repos/docker/docker-credential-helpers/releases/latest"
         $dockerCredDownloadUrl = $dockerCredLatestRelease.assets.browser_download_url -match "docker-credential-wincred-.+\.zip" | Select-Object -First 1
         $dockerCredArchive = Start-DownloadWithRetry -Url $dockerCredDownloadUrl
-        Extract-7Zip -Path $dockerCredArchive -DestinationPath "C:\Program Files\Docker"
+        Expand-Archive -Path $dockerCredArchive -DestinationPath "C:\Program Files\Docker"
     - run: |
         Get-ChildItem "C:\Program Files\Docker"
     - run: |
