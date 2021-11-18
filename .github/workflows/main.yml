@@ -18,4 +18,7 @@ jobs:
         Get-ChildItem "C:\Program Files\Docker"
     - run: |
         Get-Command "docker-credential-wincred.exe"
+        docker --version
+        docker-credential-wincred --version
+        
         
