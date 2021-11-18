@@ -11,5 +11,11 @@ jobs:
     - run: |
         Remove-Item -Path "C:\Program Files\Docker\docker-credential-wincred.exe" -Force
     - run: |
+        $release = 'https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-wincred-v0.6.3-amd64.zip'
+        $dockerCredArchive = Start-DownloadWithRetry -Url $release
+        Extract-7Zip -Path $dockerCredArchive -DestinationPath "C:\Program Files\Docker"
+    - run: |
+        Get-ChildItem "C:\Program Files\Docker"
+    - run: |
         Get-Command "docker-credential-wincred.exe"
         
