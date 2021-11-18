@@ -9,7 +9,7 @@ jobs:
     - run: |
         Get-ChildItem "C:\Program Files\Docker"
     - run: |
-        Remove-File -Path "C:\Program Files\Docker\docker-credential-wincred.exe" -Force
+        Remove-Item -Path "C:\Program Files\Docker\docker-credential-wincred.exe" -Force
     - run: |
         Get-Command "docker-credential-wincred.exe"
         
