@@ -19,6 +19,6 @@ jobs:
     - run: |
         Get-Command "docker-credential-wincred.exe"
         docker --version
-        docker-credential-wincred --version
+        docker-credential-wincred version
         
         
