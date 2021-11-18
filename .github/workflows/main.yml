@@ -7,7 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        $env:PATH
-        
-        Get-Command "docker"
+        Get-ChildItem "C:\Program Files\Docker"
+    - run: |
+        Remove-File -Path "C:\Program Files\Docker\docker-credential-wincred.exe" -Force
+    - run: |
+        Get-Command "docker-credential-wincred.exe"
         
