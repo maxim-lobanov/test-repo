@@ -3,23 +3,9 @@ on: [ push, pull_request ]
 jobs:
   rider:
     name: Rider
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - run: |
-        Get-ChildItem "C:\Program Files\Docker"
-    - run: |
-        Remove-Item -Path "C:\Program Files\Docker\docker-credential-wincred.exe" -Force
-    - run: |
-        $dockerCredLatestRelease = Invoke-RestMethod -Uri "https://api.github.com/repos/docker/docker-credential-helpers/releases/latest"
-        $dockerCredDownloadUrl = $dockerCredLatestRelease.assets.browser_download_url -match "docker-credential-wincred-.+\.zip" | Select-Object -First 1
-        $dockerCredArchive = Start-DownloadWithRetry -Url $dockerCredDownloadUrl
-        Expand-Archive -Path $dockerCredArchive -DestinationPath "C:\Program Files\Docker"
-    - run: |
-        Get-ChildItem "C:\Program Files\Docker"
-    - run: |
-        Get-Command "docker-credential-wincred.exe"
-        docker --version
-        docker-credential-wincred version
-        
+        docker system info
         
