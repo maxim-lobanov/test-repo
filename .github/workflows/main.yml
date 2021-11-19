@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo chown packer:docker -R /usr/share/rust
+        sudo chown mysql:docker -R /usr/share/rust
     - run: |
         ls -la /usr/share/rust/.cargo/bin
     - name: Cache
