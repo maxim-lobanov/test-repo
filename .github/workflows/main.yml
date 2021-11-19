@@ -7,13 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo usermod -a -G root runner
+        #sudo usermod -a -G root runner
     - run: |
-        groups runner
-        echo "-----"
-        groups root
-    - run: |
-        sudo chown root:docker -R /usr/share/rust
+        sudo chown :docker -R /usr/share/rust
     - run: |
         ls -la /usr/share/rust/.cargo/bin
     - name: Cache
