@@ -7,17 +7,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
+        ls -la /user/share/rust
+    - run: |
         sudo useradd testuser
         sudo chown testuser:docker -R /usr/share/rust
         sudo userdel testuser
     - run: |
         ls -la /usr/share/rust/.cargo/bin
-    - name: Cache
-      uses: actions/cache@v2.1.6
-      with:
-        path: /usr/share/rust/.cargo/bin
-        key: a4
-    - run: |
-        ls -la /usr/share/rust/.cargo/bin
+    #- name: Cache
+    #  uses: actions/cache@v2.1.6
+   #   with:
+    #    path: /usr/share/rust/.cargo/bin
+   #     key: a4
+    #- run: |
+    #    ls -la /usr/share/rust/.cargo/bin
         
         
