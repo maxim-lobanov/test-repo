@@ -19,8 +19,7 @@ jobs:
         ls -la /etc/skel/.cargo
     - run: |
         sudo useradd testuser
-        sudo chown testuser:docker -R /usr/share/rust
-        sudo userdel testuser
+        ls -la /home/testuser
     - run: |
         ls -la /usr/share/rust/.cargo/bin
     #- name: Cache
