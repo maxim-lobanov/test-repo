@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo usermod -a -G docker root
+        sudo usermod -a -G root runner
     - run: |
         groups runner
         echo "-----"
