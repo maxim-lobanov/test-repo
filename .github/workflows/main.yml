@@ -19,6 +19,8 @@ jobs:
         ls -la /etc/skel/.cargo
     - run: |
         sudo useradd testuser
+        su testuser -c "echo hello"
+        ls -la /home
         ls -la /home/testuser
     - run: |
         ls -la /usr/share/rust/.cargo/bin
