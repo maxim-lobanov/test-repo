@@ -7,18 +7,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
+        sudo usermod -a -G docker root
+    - run: |
         groups runner
         echo "-----"
         groups root
     - run: |
-        sudo chown mysql:docker -R /usr/share/rust
+        sudo chown root:docker -R /usr/share/rust
     - run: |
         ls -la /usr/share/rust/.cargo/bin
     - name: Cache
       uses: actions/cache@v2.1.6
       with:
         path: /usr/share/rust/.cargo/bin
-        key: a3
+        key: a4
     - run: |
         ls -la /usr/share/rust/.cargo/bin
         
