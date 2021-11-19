@@ -21,17 +21,10 @@ jobs:
         sudo useradd -m testuser
         sudo passwd -d testuser
 
-        su testuser -c "echo hello"
         ls -la /home
         ls -la /home/testuser
     - run: |
-        ls -la /usr/share/rust/.cargo/bin
-    #- name: Cache
-    #  uses: actions/cache@v2.1.6
-   #   with:
-    #    path: /usr/share/rust/.cargo/bin
-   #     key: a4
-    #- run: |
-    #    ls -la /usr/share/rust/.cargo/bin
-        
+        ls -la /home/testuser/.cargo
+        ls -la /home/testuser/.cargo/bin
+        ls -la /home/testuser/.rustup
         
