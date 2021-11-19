@@ -1,4 +1,4 @@
-on: [ push, pull_request ]
+on: [ push, workflow_dispatch ]
 
 jobs:
   rider:
@@ -7,5 +7,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        docker system info
+        chown root:docker -R /usr/share/rust
+    - run: |
+        ls -la /usr/share/rust/.cargo/env
+    - name: Cache
+      uses: actions/cache@v2.1.6
+      with:
+        path: /usr/share/rust/.cargo/env
+        key: a1
+    - run: |
+        ls -la /usr/share/rust/.cargo/env
+        
         
