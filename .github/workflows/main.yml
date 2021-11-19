@@ -13,8 +13,8 @@ jobs:
     - name: Cache
       uses: actions/cache@v2.1.6
       with:
-        path: /usr/share/rust/.cargo/env
-        key: a1
+        path: /usr/share/rust/.cargo/bin
+        key: a2
     - run: |
         ls -la /usr/share/rust/.cargo/env
         
