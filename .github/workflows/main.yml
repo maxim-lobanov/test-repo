@@ -7,7 +7,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo ls -la /usr/share/rust
+        sudo chown root:root -R /usr/share/rust
+        rm -rf /etc/skel/.rustup
+        rm -rf /etc/skel/.cargo
+        ls -la /usr/share/rust
+        ls -la /etc/skel
+    - run: |
+        cp -rp /usr/share/rust/* /etc/skel
+        ls -la /etc/skel
+        ls -la /etc/skel/.cargo
     - run: |
         sudo useradd testuser
         sudo chown testuser:docker -R /usr/share/rust
