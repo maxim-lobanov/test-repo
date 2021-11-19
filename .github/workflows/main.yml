@@ -4,6 +4,8 @@ jobs:
   rider:
     name: Rider
     runs-on: ubuntu-latest
+    env:
+      TAR_OPTIONS: -o
     steps:
     - uses: actions/checkout@v2
     - run: |
