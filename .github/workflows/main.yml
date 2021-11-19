@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        chown root:docker -R /usr/share/rust
+        sudo chown root:docker -R /usr/share/rust
     - run: |
         ls -la /usr/share/rust/.cargo/env
     - name: Cache
