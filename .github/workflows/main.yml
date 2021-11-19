@@ -13,7 +13,8 @@ jobs:
         ls -la /usr/share/rust
         ls -la /etc/skel
     - run: |
-        sudo cp -rp /usr/share/rust/* /etc/skel
+        sudo cp -rp /usr/share/rust/.cargo /etc/skel
+        sudo cp -rp /usr/share/rust/.rustup /etc/skel
         ls -la /etc/skel
         ls -la /etc/skel/.cargo
     - run: |
