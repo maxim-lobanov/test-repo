@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo ls -la /user/share/rust
+        sudo ls -la /usr/share/rust
     - run: |
         sudo useradd testuser
         sudo chown testuser:docker -R /usr/share/rust
