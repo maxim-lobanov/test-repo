@@ -9,13 +9,13 @@ jobs:
     - run: |
         sudo chown root:docker -R /usr/share/rust
     - run: |
-        ls -la /usr/share/rust/.cargo/env
+        ls -la /usr/share/rust/.cargo/bin
     - name: Cache
       uses: actions/cache@v2.1.6
       with:
         path: /usr/share/rust/.cargo/bin
         key: a2
     - run: |
-        ls -la /usr/share/rust/.cargo/env
+        ls -la /usr/share/rust/.cargo/bin
         
         
