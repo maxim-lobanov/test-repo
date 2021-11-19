@@ -8,8 +8,8 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         sudo useradd testuser
-    - run: |
         sudo chown testuser:docker -R /usr/share/rust
+        sudo userdel testuser
     - run: |
         ls -la /usr/share/rust/.cargo/bin
     - name: Cache
