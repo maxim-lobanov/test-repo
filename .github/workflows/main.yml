@@ -18,7 +18,7 @@ jobs:
         ls -la /etc/skel
         ls -la /etc/skel/.cargo
     - run: |
-        sudo useradd testuser
+        sudo useradd -m testuser
         sudo passwd -d testuser
 
         su testuser -c "echo hello"
