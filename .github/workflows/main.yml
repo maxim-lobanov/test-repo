@@ -8,12 +8,12 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         sudo chown root:root -R /usr/share/rust
-        rm -rf /etc/skel/.rustup
-        rm -rf /etc/skel/.cargo
+        sudo rm -rf /etc/skel/.rustup
+        sudo rm -rf /etc/skel/.cargo
         ls -la /usr/share/rust
         ls -la /etc/skel
     - run: |
-        cp -rp /usr/share/rust/* /etc/skel
+        sudo cp -rp /usr/share/rust/* /etc/skel
         ls -la /etc/skel
         ls -la /etc/skel/.cargo
     - run: |
