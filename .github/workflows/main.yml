@@ -7,7 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        groups
+        groups runner
+        echo "-----"
+        groups root
     - run: |
         sudo chown mysql:docker -R /usr/share/rust
     - run: |
