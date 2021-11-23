@@ -13,4 +13,5 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: |
-        Get-Content C:\\imagedata.json
+        docker info
+        Get-Content "$env:USERPROFILE/.docker/config.json"
