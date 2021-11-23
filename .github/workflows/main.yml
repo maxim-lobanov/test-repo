@@ -10,7 +10,7 @@ jobs:
         cat /imagegeneration/imagedata.json
   rider-win:
     name: Rider-Win
-    run-on: windows-latest
+    runs-on: windows-latest
     steps:
     - run: |
         Get-Content C:\\imagedata.json
