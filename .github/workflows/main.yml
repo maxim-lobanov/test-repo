@@ -7,24 +7,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        sudo chown root:root -R /usr/share/rust
-        sudo rm -rf /etc/skel/.rustup
-        sudo rm -rf /etc/skel/.cargo
-        ls -la /usr/share/rust
-        ls -la /etc/skel
+        cat /imagegeneration/imagedata.json
+  rider-win:
+    name: Rider-Win
+    run-on: windows-latest
+    steps:
     - run: |
-        sudo cp -rp /usr/share/rust/.cargo /etc/skel
-        sudo cp -rp /usr/share/rust/.rustup /etc/skel
-        ls -la /etc/skel
-        ls -la /etc/skel/.cargo
-    - run: |
-        sudo useradd -m testuser
-        sudo passwd -d testuser
-
-        ls -la /home
-        ls -la /home/testuser
-    - run: |
-        ls -la /home/testuser/.cargo
-        ls -la /home/testuser/.cargo/bin
-        ls -la /home/testuser/.rustup
-        
+        Get-Content C:\\imagedata.json
