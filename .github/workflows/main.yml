@@ -9,6 +9,6 @@ jobs:
     - run: |
        ls -la /home/runner/runners
        echo "-----"
-       ls -la /home/runner/runners/2.195.0/.setup_info
+       ls -la /home/runner/runners/2.284.0/.setup_info
        echo "------"
-       cat /home/runner/runners/2.195.0/.setup_info
+       cat /home/runner/runners/2.284.0/.setup_info
