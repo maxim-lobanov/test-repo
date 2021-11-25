@@ -7,11 +7,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        cat /imagegeneration/imagedata.json
-  rider-win:
-    name: Rider-Win
-    runs-on: windows-latest
-    steps:
-    - run: |
-        docker info
-        Get-Content "$env:USERPROFILE/.docker/config.json"
+        printenv
