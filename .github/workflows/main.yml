@@ -7,4 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        printenv
+        ls -la /home/runner
+        echo "-----"
+        ls -la /home/runner/work
