@@ -7,8 +7,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-       ls -la /home/runner/agents
+       ls -la /home/runner/runners
        echo "-----"
-       ls -la /home/runner/agents/2.195.0/.setup_info
+       ls -la /home/runner/runners/2.195.0/.setup_info
        echo "------"
-       cat /home/runner/agents/2.195.0/.setup_info
+       cat /home/runner/runners/2.195.0/.setup_info
