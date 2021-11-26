@@ -7,8 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-       ls -la /home/runner/runners
-       echo "-----"
-       ls -la /home/runner/runners/2.284.0/.setup_info
-       echo "------"
-       cat /home/runner/runners/2.284.0/.setup_info
+       cat $HOME/.docker/config.json
+    - run: |
+        docker logout
+        cat $HOME/.docker/config.json
