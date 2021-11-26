@@ -15,18 +15,13 @@ jobs:
         sudo apt-get install pass gnupg2
         pass init "12345"
     - run: |
-        wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.2/docker-credential-secretservice-v0.6.2-amd64.tar.gz
-        tar -xf docker-credential-secretservice-v0.6.2-amd64.tar.gz
-        chmod +x docker-credential-secretservice
-        mv docker-credential-secretservice /usr/local/bin/
+        wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz
+        tar -xf docker-credential-pass-v0.6.3-amd64.tar.gz
+        chmod +x docker-credential-pass
+        mv docker-credential-pass /usr/local/bin/
     - run: |
-        which docker-credential-secretservice
-        docker-credential-secretservice version
-    - run: |
-        echo '{' > $HOME/.docker/config.json
-        echo '    "credsStore": "secretservice"' >> $HOME/.docker/config.json
-        echo '}' >> $HOME/.docker/config.json
-        cat $HOME/.docker/config.json
+        which docker-credential-pass
+        docker-credential-pass version
     - run: |
         docker login -u githubactions -p 3d6472b9-3d49-4d17-9fc9-90d24258043b
     - run: |
