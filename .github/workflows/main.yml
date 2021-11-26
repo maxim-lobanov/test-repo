@@ -12,11 +12,6 @@ jobs:
         docker logout
         rm -f $HOME/.docker/config.json
     - run: |
-        sudo apt-get install pass gnupg2 rng-tools
-        gpg-agent --daemon --use-standard-socket --pinentry-program /usr/bin/pinentry-curses
-        sudo rngd -r /dev/urandom
-        gpg2 --gen-key
-        pass init "Your Name"
         echo "{" > $HOME/.docker/config.json
         echo '  "credsStore": "pass"' >> $HOME/.docker/config.json
         echo "}" >> $HOME/.docker/config.json
