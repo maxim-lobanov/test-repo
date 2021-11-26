@@ -13,9 +13,14 @@ jobs:
         rm -f $HOME/.docker/config.json
     - run: |
         sudo apt-get install pass gnupg2
-        pass init "5BB54DF1XXXXXXXXF87XXXXXXXXXXXXXX945A"
-        pass insert docker-credential-helpers/docker-pass-initialized-check
-        pass show docker-credential-helpers/docker-pass-initialized-check
+        gpg-agent --daemon --use-standard-socket --pinentry-program /usr/bin/pinentry-curses
+        sudo rngd -r /dev/urandom
+        gpg2 --gen-key
+        pass init "Your Name"
+        echo "{" > $HOME/.docker/config.json
+        echo '  "credsStore": "pass"' >> $HOME/.docker/config.json
+        echo "}" >> $HOME/.docker/config.json
+        cat $HOME/.docker/config.json
     - run: |
         wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz
         tar -xf docker-credential-pass-v0.6.3-amd64.tar.gz
