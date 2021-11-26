@@ -12,7 +12,7 @@ jobs:
         docker logout
         rm -f $HOME/.docker/config.json
     - run: |
-        sudo apt-get install pass gnupg2
+        sudo apt-get install pass gnupg2 rng-tools rng-tools5
         gpg-agent --daemon --use-standard-socket --pinentry-program /usr/bin/pinentry-curses
         sudo rngd -r /dev/urandom
         gpg2 --gen-key
