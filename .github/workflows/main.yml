@@ -17,6 +17,14 @@ jobs:
         chmod +x docker-credential-secretservice
         mv docker-credential-secretservice /usr/local/bin/
     - run: |
+        which docker-credential-secretservice
+        docker-credential-secretservice version
+    - run: |
+        echo '{' > $HOME/.docker/config.json
+        echo '    "credsStore": "secretservice"' >> $HOME/.docker/config.json
+        echo '}' >> $HOME/.docker/config.json
+        cat $HOME/.docker/config.json
+    - run: |
         docker login -u githubactions -p 3d6472b9-3d49-4d17-9fc9-90d24258043b
     - run: |
         cat $HOME/.docker/config.json
