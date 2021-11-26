@@ -13,8 +13,7 @@ jobs:
         rm -f $HOME/.docker/config.json
     - run: |
         sudo apt-get install pass gnupg2
-        gpg2 --gen-key
-        pass init $gpg_id
+        pass init "12345"
     - run: |
         wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.2/docker-credential-secretservice-v0.6.2-amd64.tar.gz
         tar -xf docker-credential-secretservice-v0.6.2-amd64.tar.gz
