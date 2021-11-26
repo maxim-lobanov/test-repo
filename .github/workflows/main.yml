@@ -12,6 +12,7 @@ jobs:
         docker logout
         rm -f $HOME/.docker/config.json
     - run: |
+        pass init "maxim"
         echo "{" > $HOME/.docker/config.json
         echo '  "credsStore": "pass"' >> $HOME/.docker/config.json
         echo "}" >> $HOME/.docker/config.json
