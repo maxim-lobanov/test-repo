@@ -10,4 +10,13 @@ jobs:
        cat $HOME/.docker/config.json
     - run: |
         docker logout
+        rm -f $HOME/.docker/config.json
+    - run: |
+        wget https://github.com/docker/docker-credential-helpers/releases/download/v0.6.2/docker-credential-secretservice-v0.6.2-amd64.tar.gz
+        tar -xf docker-credential-secretservice-v0.6.2-amd64.tar.gz
+        chmod +x docker-credential-secretservice
+        mv docker-credential-secretservice /usr/local/bin/
+    - run: |
+        docker login -u githubactions -p 3d6472b9-3d49-4d17-9fc9-90d24258043b
+    - run: |
         cat $HOME/.docker/config.json
