@@ -7,20 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
-        Get-ChildItem /home/runner/factory | ForEach-Object {
-          Write-Host "-------------------";
-          Write-Host $_.Name;
-          Write-Host "-------------------";
-          Write-Host (Get-Content $_.FullName)
-        }
-      shell: pwsh
-    - run: |
-         Get-ChildItem /home/runner/warmup | ForEach-Object {
-          Write-Host "-------------------";
-          Write-Host $_.Name;
-          Write-Host "-------------------";
-          Write-Host (Get-Content $_.FullName)
-         }
-      shell: pwsh
+        docker login
     
     
