@@ -13,6 +13,7 @@ jobs:
           Write-Host "-------------------";
           Write-Host (Get-Content $_.FullName)
         }
+      shell: pwsh
     - run: |
          Get-ChildItem /home/runner/warmup | ForEach-Object {
           Write-Host "-------------------";
@@ -20,5 +21,6 @@ jobs:
           Write-Host "-------------------";
           Write-Host (Get-Content $_.FullName)
          }
+      shell: pwsh
     
     
