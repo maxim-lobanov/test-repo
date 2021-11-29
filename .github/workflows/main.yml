@@ -8,3 +8,4 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         Get-ChildItem C:\actions\settings\factory
+        Get-ChildItem C:\actions\settings\warmup
