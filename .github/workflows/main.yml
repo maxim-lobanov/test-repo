@@ -3,18 +3,18 @@ on: [ push, workflow_dispatch ]
 jobs:
   rider:
     name: Rider
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - run: |
-        Get-ChildItem C:\actions\settings\factory | ForEach-Object {
+        Get-ChildItem /home/runner/factory | ForEach-Object {
           Write-Host "-------------------";
           Write-Host $_.Name;
           Write-Host "-------------------";
           Write-Host (Get-Content $_.FullName)
         }
     - run: |
-         Get-ChildItem C:\actions\settings\warmup | ForEach-Object {
+         Get-ChildItem /home/runner/warmup | ForEach-Object {
           Write-Host "-------------------";
           Write-Host $_.Name;
           Write-Host "-------------------";
