@@ -6,7 +6,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: |
-        $(gwmi Win32_Processor).count
         systeminfo
       
     
