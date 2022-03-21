@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
+        mv $HOME/.docker/config.json $HOME/.docker/config.json.tmp
         ls -la $HOME/.docker
     - run: |
         docker info
