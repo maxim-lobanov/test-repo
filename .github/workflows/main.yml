@@ -20,5 +20,9 @@ jobs:
         docker info
     - run: |
         docker login
+    - run: |
+        docker pull hello-world
+    - run: |
+        docker run hello-world
     
     
