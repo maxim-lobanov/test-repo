@@ -10,6 +10,14 @@ jobs:
         ls -la $HOME/.docker
     - run: |
         docker info
+        docker login | true
+    - run: |
+        docker logout
+    - run: |
+        mv $HOME/.docker/config.json.tmp $HOME/.docker/config.json
+        ls -la $HOME/.docker
+    - run: |
+        docker info
     - run: |
         docker login
     
