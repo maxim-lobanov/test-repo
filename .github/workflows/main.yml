@@ -11,7 +11,7 @@ jobs:
         Invoke-WebRequest -Uri $url -OutFile ./go.zip
     - shell: pwsh
       run: |
-        unzip go.zip
+        unzip -qq go.zip
       
     
     
