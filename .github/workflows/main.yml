@@ -3,24 +3,14 @@ on: [ push, workflow_dispatch ]
 jobs:
   rider:
     name: Rider
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - run: |
-        mv $HOME/.docker/config.json $HOME/.docker/config.json.tmp
-        ls -la $HOME/.docker
-    - run: |
-        docker info
-        docker login | true
-    - run: |
-        docker logout
-    - run: |
-        mv $HOME/.docker/config.json.tmp $HOME/.docker/config.json
-        ls -la $HOME/.docker
-    - run: |
-        docker info
-    - run: |
-        docker pull hello-world
-    - run: |
-        docker run hello-world
-    
-    
+        Write-Host "[STOPWATCH] Test-Connection ($(Get-Date))";
+        $stopwatch = [system.diagnostics.stopwatch]::StartNew()
+        $connectionTests = @('google.com') | ForEach-Object { New-Object System.Net.Sockets.TCPClient -ArgumentList $_, 80 }
+        if ($connectionTests.Connected -notcontains $true) { throw 'Failed to connect to internet' }
+        Write-Host 'Connected to internet'
+        $stopwatch.Stop();
+        Write-Host "[STOPWATCH] Test-Connection: $($stopwatch.Elapsed.TotalSeconds) ms ($(Get-Date))"
+      shell: powershell
