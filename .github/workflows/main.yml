@@ -6,11 +6,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: |
-        Write-Host "[STOPWATCH] Test-Connection ($(Get-Date))";
-        $stopwatch = [system.diagnostics.stopwatch]::StartNew()
-        $connectionTests = @('google.com') | ForEach-Object { New-Object System.Net.Sockets.TCPClient -ArgumentList $_, 80 }
-        if ($connectionTests.Connected -notcontains $true) { throw 'Failed to connect to internet' }
-        Write-Host 'Connected to internet'
-        $stopwatch.Stop();
-        Write-Host "[STOPWATCH] Test-Connection: $($stopwatch.Elapsed.TotalSeconds) ms ($(Get-Date))"
+        function Ping-Connection($Url) { $tcpClient = New-Object System.Net.Sockets.TCPClient; try { $tcpClient.Connect($Url, 80) } catch {} finally { $result = $tcpClient.Connected; $tcpClient.Dispose(); if ($result) { Write-Host 'Connected to', $Url } else { Write-Host 'Failed to connect to', $Url }; $result } }
+        if (-not ((Ping-Connection "gagawoogle.com") -or (Ping-Connection "githaub.com"))) { throw "Failed to connect internet" }
       shell: powershell
