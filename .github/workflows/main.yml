@@ -6,6 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: |
-        function Ping-Connection($Url) { $tcpClient = New-Object System.Net.Sockets.TCPClient; try { $tcpClient.Connect($Url, 80) } catch {} finally { $result = $tcpClient.Connected; $tcpClient.Dispose(); if ($result) { Write-Host 'Connected to', $Url } else { Write-Host 'Failed to connect to', $Url }; $result } }
-        if (-not ((Ping-Connection "gagawoogle.com") -or (Ping-Connection "githaub.com"))) { throw "Failed to connect internet" }
+        $env:HOME
+        
+        Get-ChildItem env:
       shell: powershell
