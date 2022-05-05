@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: |
-        Get-ChildItem $env:USERPROFILE
-        
+
         Get-ChildItem "$env:USERPROFILE\.docker"
+        Get-Content "C:\Users\runneradmin\.docker\config.json"
       shell: powershell
