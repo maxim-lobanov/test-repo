@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - run: |
-        $env:HOME
+        Get-ChildItem $env:USERPROFILE
         
-        Get-ChildItem env:
+        Get-ChildItem "$env:USERPROFILE\.docker"
       shell: powershell
