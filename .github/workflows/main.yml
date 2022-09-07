@@ -3,10 +3,10 @@ on: [ push, workflow_dispatch ]
 jobs:
   rider:
     name: Rider
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - run: |
 
         Get-ChildItem "$env:USERPROFILE\.docker"
         Get-Content "C:\Users\runneradmin\.docker\config.json"
-      shell: powershell
+      shell: pwsh
